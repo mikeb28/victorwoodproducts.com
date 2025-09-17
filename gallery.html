@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Gallery | Victor Wood Products</title>
+    <meta name="description" content="View our workshop, high-quality wood pallets, and custom crates from Victor Wood Products.">
+    <meta name="keywords" content="wood products, pallets, crates, warehouse, manufacturing, baltimore, maryland, gallery, photos">
+    <meta name="author" content="Victor Wood Products">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.jpg" type="image/png">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .slideshow-container {
+            position: relative;
+            max-width: 800px; /* Adjust max width as needed */
+            margin: auto;
+            border-radius: 0.5rem; /* rounded-lg */
+            overflow: hidden; /* Ensures images stay within the rounded corners */
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1); /* shadow-lg */
+        }
+        .mySlides {
+            display: none;
+        }
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            background-color: rgba(0,0,0,0.5); /* Semi-transparent background for buttons */
+        }
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+        .text {
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            background-color: rgba(0,0,0,0.6);
+        }
+        .fade {
+          animation-name: fade;
+          animation-duration: 1.5s;
+        }
+        @keyframes fade {
+          from {opacity: .4}
+          to {opacity: 1}
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="index.html" class="flex items-center">
+                <img src="VWP_logo_words.jpg" alt="Victor Wood Products Logo" class="h-16 mr-3">
+            </a>
+            <div class="hidden md:flex space-x-6 items-center">
+                <a href="index.html" class="text-gray-600 hover:text-amber-700 transition duration-300">Home</a>
+                <a href="index.html#about" class="text-gray-600 hover:text-amber-700 transition duration-300">About Us</a>
+                <a href="index.html#services" class="text-gray-600 hover:text-amber-700 transition duration-300">Products & Services</a>
+                <a href="government.html" class="text-gray-600 hover:text-amber-700 transition duration-300">Government Contracting</a>
+                <a href="gallery.html" class="text-amber-700 font-bold transition duration-300">Our Gallery</a>
+                <a href="index.html#contact" class="bg-amber-600 text-white px-4 py-2 rounded-md hover:bg-amber-700 transition duration-300">Contact Us</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-800 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="index.html" class="block py-2 text-gray-600 hover:text-amber-700">Home</a>
+            <a href="index.html#about" class="block py-2 text-gray-600 hover:text-amber-700">About Us</a>
+            <a href="index.html#services" class="block py-2 text-gray-600 hover:text-amber-700">Products & Services</a>
+            <a href="government.html" class="block py-2 text-gray-600 hover:text-amber-700">Government Contracting</a>
+            <a href="gallery.html" class="block py-2 text-amber-700 font-bold">Our Gallery</a>
+            <a href="index.html#contact" class="block mt-2 bg-amber-600 text-white px-4 py-2 rounded-md text-center hover:bg-amber-700">Contact Us</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="py-20 bg-gray-100">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h1 class="text-4xl md:text-5xl font-bold text-amber-800 mb-4">Our Workshop & Products</h1>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">See the quality and craftsmanship that goes into every Victor Wood Products solution. From raw materials to finished goods, we take pride in our work.</p>
+                </div>
+
+                <div class="slideshow-container">
+                    <div class="mySlides fade">
+                        <img src="image1.jpg" style="width:100%; max-height: 500px; object-fit: cover;" alt="Interior of the Victor Wood Products warehouse, stack of custom pallets">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="image6.jpg" style="width:100%; max-height: 500px; object-fit: cover;" alt="Stack of new wood pallets">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="image2.jpg" style="width:100%; max-height: 500px; object-fit: cover;" alt="Close-up of a custom pallets">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="image3.jpg" style="width:100%; max-height: 500px; object-fit: cover;" alt="custom crates stacked in warehopuse">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="image4.jpg" style="width:100%; max-height: 500px; object-fit: cover;" alt="Stack of raw lumber. ready for shipping">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="image7.jpg" style="width:100%; max-height: 500px; object-fit: cover;" alt="Stock of custom crates loaded on a truck for shipping">
+                    </div>
+
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white">
+        <div class="container mx-auto px-6 py-8">
+            <div class="md:flex justify-between items-center text-center md:text-left">
+                <div>
+                    <img src="VWP_logo_Trees.jpg" alt="Victor Wood Products Tree Logo" class="h-16 mx-auto mb-4 md:mx-0">
+                    <h3 class="text-xl font-bold">Victor Wood Products</h3>
+                    <p>7700 Rolling Mill Rd, Baltimore, MD 21224</p>
+                    <p>(410) 288-4300</p>
+                    <p class="mt-2 text-sm text-gray-400">CAGE: 76UX7 | UEI: K6YNFUMDWHJ8</p>
+                </div>
+                <div class="mt-4 md:mt-0">
+                    <p>&copy; 2025 Victor Wood Products. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Slideshow functionality
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+          showSlides(slideIndex += n);
+        }
+
+        function showSlides(n) {
+          let i;
+          let slides = document.getElementsByClassName("mySlides");
+          if (n > slides.length) {slideIndex = 1}
+          if (n < 1) {slideIndex = slides.length}
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+          }
+          if (slides.length > 0) {
+            slides[slideIndex-1].style.display = "block";
+          }
+        }
+    </script>
+
+</body>
+</html>

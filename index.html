@@ -22,16 +22,81 @@
 
     <!-- Favicon -->
     <link rel="icon" href="/favicon.jpg" type="image/jpeg">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
+
+<style>
+    body {
+        font-family: 'Inter', sans-serif;
+    }
+
+    /* --- CAROUSEL STYLES (NEW) --- */
+    /* Sets the height of the main slider */
+    .swiper-slide {
+        height: 600px; 
+    }
+    
+    /* On mobile screens, make it slightly shorter */
+    @media (max-width: 768px) {
+        .swiper-slide {
+            height: 500px;
         }
-        .hero-bg {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('background.jpg');
-            background-size: cover;
-            background-position: center;
-        }
-    </style>
+    }
+
+    /* Ensures images cover the full slide area */
+    .slide-bg-img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+    }
+
+    /* Adds a dark gradient overlay so text is readable */
+    .slide-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to right, rgba(0, 0, 0, 0.7) 30%, rgba(0, 0, 0, 0.3));
+        z-index: 0;
+    }
+
+    /* Customize the arrows to be Orange/Amber */
+    :root {
+        --swiper-theme-color: #d97706; /* Tailwind amber-600 */
+    }
+    .swiper-button-next, .swiper-button-prev {
+        color: var(--swiper-theme-color);
+    }
+    .swiper-pagination-bullet-active {
+        background: var(--swiper-theme-color);
+    }
+
+    /* --- CONTACT SECTION STYLES (From previous step) --- */
+    /* This creates the dark blurred background */
+    #contact {
+        /* Make sure 'blurred-warehouse.jpg' matches your filename */
+        background-image: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url('contact img.jpeg') !important;
+        background-size: cover !important;
+        background-position: center center !important;
+        background-repeat: no-repeat !important;
+        background-color: #222222 !important; /* Fallback color */
+    }
+
+    /* Makes the "Send Message" button Gold */
+    #contact-form button {
+        background-color: #D4AF37 !important; 
+        color: #000000 !important; 
+        border: none !important;
+    }
+
+    #contact-form button:hover {
+        background-color: #E5C15B !important; 
+        color: #000000 !important;
+    }
+</style>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
 </head>
 
 <!-- Google tag (gtag.js) -->
@@ -54,8 +119,10 @@
             
             <!--<a href="#" class="text-2xl font-bold text-amber-800">Victor Wood Products</a>
             <img src="logo.png" alt="Victor Wood Products Logo" class="h-20 mr-3">-->
-            <a href="index.html" class="flex items-center">
-                <img src="VWP_logo_words.jpg" alt="Victor Wood Products Logo" class="h-14 mr-3">
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="VWP_logo_Trees.jpg" alt="Victor Wood Products Icon" class="h-16 w-auto object-contain">
+                
+                <img src="VWP_logo_words.jpg" alt="Victor Wood Products" class="h-12 w-auto object-contain">
             </a>
     
             <div class="hidden md:flex space-x-6 items-center">
@@ -84,22 +151,80 @@
 
     <main>
         <!-- Hero Section -->
-        <section id="home" class="hero-bg text-white">
-            <div class="container mx-auto px-6 py-32 text-center">
-                <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-4">Your Trusted Partner for Wood Products in Baltimore</h1>
-                <p class="text-lg md:text-xl mb-8 max-w-3xl mx-auto">Family-owned and operated, providing durable, reliable wood products for Maryland's businesses for over 20 years.</p>
-                <a href="#contact" class="bg-amber-600 text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-amber-700 transition duration-300">Get a Free Quote</a>
+<section id="home" class="bg-white">
+            <div class="swiper mySwiper relative w-full h-[500px] md:h-[600px]">
+    
+
+                <div class="swiper-wrapper h-full">
+                    
+                    <div class="swiper-slide relative flex items-center h-full">
+                        <img src="carousel img_crate.jpeg" alt="Worker building custom wood crate" class="absolute inset-0 w-full h-full object-cover -z-10">
+                        <div class="slide-overlay absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent z-0"></div>
+                        <div class="container mx-auto px-6 relative z-10">
+                            <div class="max-w-2xl text-white">
+                                <h2 class="text-4xl md:text-5xl font-bold mb-4 leading-tight drop-shadow-lg">Custom Crating & Shipping Solutions.</h2>
+                                <p class="text-xl mb-8 drop-shadow-md">ISPM-15 Certified for international export. Built to protect your most valuable cargo.</p>
+                                <a href="#contact" class="bg-amber-600 text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-amber-700 transition duration-300 shadow-lg">Design My Crate</a>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="swiper-slide relative flex items-center h-full">
+                        <img src="carousel img_pallet.jpeg" alt="Forklift moving stack of wood pallets" class="absolute inset-0 w-full h-full object-cover -z-10">
+                        <div class="slide-overlay absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent z-0"></div>
+                        <div class="container mx-auto px-6 relative z-10">
+                            <div class="max-w-2xl text-white">
+                                <h2 class="text-4xl md:text-5xl font-bold mb-4 leading-tight drop-shadow-lg">High-Volume Pallet Supply.</h2>
+                                <p class="text-xl mb-8 drop-shadow-md">New, recycled, and custom sizes available. Reliable inventory ready for immediate delivery.</p>
+                                <a href="#contact" class="bg-amber-600 text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-amber-700 transition duration-300 shadow-lg">Get Pallet Pricing</a>
+                            </div>
+                        </div>
+                    </div>
+    
+                     <div class="swiper-slide relative flex items-center h-full">
+                        <img src="carousel img_lumber1.jpg" alt="Stacks of industrial lumber" class="absolute inset-0 w-full h-full object-cover -z-10">
+                        <div class="slide-overlay absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent z-0"></div>
+                        <div class="container mx-auto px-6 relative z-10">
+                            <div class="max-w-2xl text-white">
+                                <h2 class="text-4xl md:text-5xl font-bold mb-4 leading-tight drop-shadow-lg">Industrial Lumber & Dunnage.</h2>
+                                <p class="text-xl mb-8 drop-shadow-md">Quality softwood and hardwood lumber for construction, blocking, and bracing needs.</p>
+                                <a href="#contact" class="bg-amber-600 text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-amber-700 transition duration-300 shadow-lg">View Inventory</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="swiper-button-next md:block hidden"></div>
+                <div class="swiper-button-prev md:block hidden"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+    
+            <div class="bg-amber-50 py-6 border-t border-amber-100">
+                <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div class="flex flex-col items-center">
+                        <svg class="w-12 h-12 text-amber-700 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                        <h3 class="text-xl font-bold text-gray-800">20+ Years in Business</h3>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <svg class="w-12 h-12 text-amber-700 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 00-1 1v1a1 1 0 001 1h1a1 1 0 001-1v-1a1 1 0 00-1-1h-1z"></path></svg>
+                        <h3 class="text-xl font-bold text-gray-800">Fast Local Delivery</h3>
+                    </div>
+                    <div class="flex flex-col items-center">
+                         <svg class="w-12 h-12 text-amber-700 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .02.005.039.01.058L10 10m-7 8h2.586c.775 0 1.43.455 1.75 1.11L13 21m-7-10h2.586c.775 0 1.43.455 1.75 1.11L13 21"></path></svg>
+                        <h3 class="text-xl font-bold text-gray-800">Family Owned & Operated</h3>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- About Us Section -->
-        <section id="about" class="py-20 bg-white">
+<section id="about" class="py-20 bg-white">
             <div class="container mx-auto px-6">
         
-                <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="grid md:grid-cols-2 gap-12 items-start">
         
                     <div class="relative overflow-hidden rounded-lg shadow-xl h-96 flex items-center justify-center group">
-                        <img src="image2.jpg" alt="Stacks  wood pallets in the Victor Wood Products workshop" class="absolute w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                        <img src="image2.jpg" alt="Stacks wood pallets in the Victor Wood Products workshop" class="absolute w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
                         <div class="absolute inset-0 bg-black opacity-50"></div>
                         <h3 class="relative text-4xl font-bold text-white">Our Workshop</h3>
                         <a href="gallery.html" class="absolute inset-0">
@@ -107,10 +232,51 @@
                         </a>
                     </div>
                    
-                    <div>
-                        <h2 class="text-3xl font-bold text-amber-800 mb-4">Rooted in Baltimore, Built on Quality</h2>
-                        <p class="mb-4">For over two decades, Victor Wood Products has been a cornerstone of the local industrial community. What started as a small family operation has grown into a leading supplier of wood pallets and custom shipping solutions, but our core values remain the same: integrity, reliability, and a commitment to our customers.</p>
-                        <p class="mb-4">We're not just a supplier; we're a partner in your supply chain. We understand the demands of businesses in Maryland because we're one of them. We pride ourselves on building relationships and delivering products that you can depend on, every time.That’s why we always encourage customers to stop on by our office. Come see the warehouse in action, let's build a custom crate together, or just say hello. We deliver products you can depend on, from people you can trust.</p>
+<div class="space-y-6">
+                        <div>
+                            <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 leading-tight mb-2">
+                                Your Trusted Partner for Wood Products in Baltimore
+                            </h2>
+                            <p class="text-lg text-amber-700 font-medium">
+                                Family-owned and operated, serving Maryland's businesses since 1997.
+                            </p>
+                        </div>
+
+                        <div class="w-20 h-1 bg-amber-500 rounded"></div>
+                        
+                        <div class="text-gray-600 text-lg leading-relaxed space-y-4">
+                            <p>
+                                For over two decades, Victor Wood Products has been a cornerstone of the local industrial community. Today, we are best known for our <strong class="text-gray-800">custom crating capabilities</strong>, providing secure protection for high-value assets. While we are experts in designing crates for your most valuable cargo, we remain your trusted source for industrial lumber and high-volume pallets.
+                            </p>
+                            
+                            <p>Our core values remain the same:</p>
+                            
+                            <ul class="space-y-2 ml-1">
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 text-amber-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    <span class="font-semibold text-gray-800">Uncompromising Integrity</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 text-amber-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    <span class="font-semibold text-gray-800">Reliable Delivery</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 text-amber-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    <span class="font-semibold text-gray-800">Commitment to Customers</span>
+                                </li>
+                            </ul>
+
+                            <p>
+                                We're not just a supplier; we're a partner in your supply chain. We understand the demands of businesses in Maryland because we're one of them.
+                            </p>
+                        </div>
+
+                        <div class="pt-2">
+                            <a href="#contact" class="inline-flex items-center text-amber-700 font-bold hover:text-amber-800 transition duration-300 group">
+                                Stop by our office or say hello
+                                <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            </a>
+                        </div>
                     </div>
                     
                 </div>
@@ -264,6 +430,27 @@
         });
 
     </script>
+
+<script>
+    var swiper = new Swiper(".mySwiper", {
+        spaceBetween: 0,
+        centeredSlides: true,
+        loop: true, // Makes it rotate infinitely
+        autoplay: {
+            delay: 5000, // Rotates every 5 seconds
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+</script>
+
 
 </body>
 </html>

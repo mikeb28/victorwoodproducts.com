@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://victorwoodproducts.com/sitemap.xml

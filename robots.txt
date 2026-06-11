@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
+Disallow: /ach-payment-instructions.html
 Sitemap: https://victorwoodproducts.com/sitemap.xml

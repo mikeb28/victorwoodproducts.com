@@ -1,2 +1,9 @@
-[[plugins]]
-package = "@netlify/plugin-sitemap"
+# The @netlify/plugin-sitemap plugin was removed intentionally.
+#
+# It auto-generated a sitemap.xml at build time that overwrote the curated
+# sitemap.xml in the repo root. The generated file flattened every page to
+# priority 0.8 (discarding the homepage/money-page hierarchy) and included
+# utility pages that should not be in a sitemap (/thankyou, /privacy-policy).
+#
+# sitemap.xml is now maintained by hand. When adding or removing a page,
+# update sitemap.xml too — nothing generates it automatically anymore.

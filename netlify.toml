@@ -7,3 +7,13 @@
 #
 # sitemap.xml is now maintained by hand. When adding or removing a page,
 # update sitemap.xml too — nothing generates it automatically anymore.
+
+# The capability statement was replaced Aug 2026 and renamed to a descriptive
+# filename. The old path was linked publicly from /government and may still be
+# circulating with federal contacts (Maryland APEX, APG, Coast Guard Yard), so
+# it redirects rather than 404s.
+[[redirects]]
+  from = "/capability-statement.pdf"
+  to = "/victor-wood-products-capability-statement.pdf"
+  status = 301
+  force = true

@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ISPM-15 Explained: IPPC Stamp, Rules &amp; Exemptions</title>
+    <meta name="description" content="What ISPM-15 means for pallets and crates: how to read the IPPC stamp, HT vs MB treatment codes, what's exempt, and what happens if wood packaging fails.">
+    <meta name="author" content="Victor Wood Products">
+    <link rel="canonical" href="https://victorwoodproducts.com/ispm-15-guide">
+
+    <link rel="stylesheet" href="/tailwind.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="/favicon.jpg" type="image/jpeg">
+
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .hero-overlay { background: linear-gradient(to right, rgba(0,0,0,0.78) 45%, rgba(0,0,0,0.45)); }
+        .dropdown-menu { display: none; }
+        .dropdown:hover .dropdown-menu,
+        .dropdown.open .dropdown-menu { display: block; }
+
+        /* ISPM-15 stamp diagram */
+        .stamp { display: inline-flex; align-items: stretch; border: 3px solid #1f2937; border-radius: 6px; background: #fff; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-weight: 700; color: #1f2937; }
+        .stamp-symbol { display: flex; align-items: center; justify-content: center; padding: 0.75rem 1rem; border-right: 3px solid #1f2937; font-size: 0.8rem; text-align: center; line-height: 1.2; }
+        .stamp-codes { display: flex; flex-direction: column; justify-content: center; padding: 0.5rem 1rem; font-size: 1.35rem; letter-spacing: 0.04em; }
+        .stamp-tag { display: inline-block; min-width: 1.5rem; padding: 0 0.35rem; margin-right: 0.35rem; border-radius: 9999px; background: #d97706; color: #fff; font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 700; text-align: center; line-height: 1.5rem; }
+
+        /* treatment code table */
+        .guide-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+        .guide-table th, .guide-table td { padding: 0.75rem 1rem; text-align: left; vertical-align: top; border-bottom: 1px solid #e5e7eb; }
+        .guide-table th { background: #fffbeb; color: #111827; font-weight: 700; }
+        .table-wrap { overflow-x: auto; border: 1px solid #e5e7eb; border-radius: 0.5rem; background: #fff; }
+        .answer-box { border-left: 4px solid #f59e0b; }
+        .toc a:hover { text-decoration: underline; }
+    </style>
+
+    <script type="application/ld+json">
+    [
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "ISPM-15 Explained: A Shipper's Guide to Wood Packaging Rules",
+        "description": "What ISPM-15 means for pallets and crates: how to read the IPPC stamp, HT vs MB treatment codes, what's exempt, and what happens if wood packaging fails inspection.",
+        "datePublished": "2026-09-23",
+        "dateModified": "2026-09-23",
+        "mainEntityOfPage": "https://victorwoodproducts.com/ispm-15-guide",
+        "image": "https://victorwoodproducts.com/carousel-img-pallet.webp",
+        "author": { "@type": "Organization", "name": "Victor Wood Products", "url": "https://victorwoodproducts.com" },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Victor Wood Products",
+          "logo": { "@type": "ImageObject", "url": "https://victorwoodproducts.com/VWP_logo_Trees.jpg" }
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://victorwoodproducts.com/" },
+          { "@type": "ListItem", "position": 2, "name": "ISPM-15 Heat Treated Pallets", "item": "https://victorwoodproducts.com/ispm-15-heat-treated-pallets" },
+          { "@type": "ListItem", "position": 3, "name": "ISPM-15 Guide", "item": "https://victorwoodproducts.com/ispm-15-guide" }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What does ISPM stand for?",
+            "acceptedAnswer": { "@type": "Answer", "text": "ISPM stands for International Standards for Phytosanitary Measures. ISPM No. 15 is the standard that covers wood packaging material — pallets, crates, skids, and dunnage — used in international trade." }
+          },
+          {
+            "@type": "Question",
+            "name": "Is ISPM-15 required for domestic shipments?",
+            "acceptedAnswer": { "@type": "Answer", "text": "No. ISPM-15 applies to wood packaging that crosses an international border. Pallets and crates that stay within the United States don't need to be treated or stamped, although some shippers use ISPM-15 stock anyway so the same packaging can be used for export." }
+          },
+          {
+            "@type": "Question",
+            "name": "Do plastic pallets, plywood, or OSB crates need ISPM-15?",
+            "acceptedAnswer": { "@type": "Answer", "text": "No. ISPM-15 covers raw solid wood. Plastic and metal pallets are outside its scope, and processed wood products such as plywood, OSB, and particleboard made with glue, heat, and pressure are exempt. Solid-wood parts attached to them — runners, cleats, or skids — still need to be treated and marked." }
+          },
+          {
+            "@type": "Question",
+            "name": "Does an ISPM-15 stamp expire?",
+            "acceptedAnswer": { "@type": "Answer", "text": "The standard sets no expiration date — heat treatment is a one-time treatment and the mark stays valid as long as the packaging isn't altered. Repaired pallets can only use wood that has already been treated, and remanufactured units must be re-treated and re-marked." }
+          },
+          {
+            "@type": "Question",
+            "name": "What's the difference between IPPC and ISPM-15?",
+            "acceptedAnswer": { "@type": "Answer", "text": "The IPPC (International Plant Protection Convention) is the international treaty organization. ISPM-15 is one of the standards it publishes. The stamp on compliant wood packaging is usually called the IPPC mark because it carries the IPPC symbol, but it certifies compliance with ISPM-15." }
+          },
+          {
+            "@type": "Question",
+            "name": "Can a pallet manufacturer be ISPM-15 compliant without a heat-treating kiln?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. In the U.S., a manufacturer can build pallets and crates from lumber that has already been heat treated at a certified facility and apply the IPPC mark under its own registered number, audited by an accredited inspection agency. That is a common and fully compliant way to produce ISPM-15 packaging." }
+          }
+        ]
+      }
+    ]
+    </script>
+</head>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KKHJB7JPMH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-KKHJB7JPMH');
+  gtag('config', 'AW-17635954418');
+</script>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="flex items-center gap-3">
+                <img loading="lazy" src="VWP_logo_Trees.webp" width="600" height="348" alt="Victor Wood Products Icon" class="h-16 w-auto object-contain">
+                <img loading="lazy" src="VWP_logo_words.webp" width="800" height="254" alt="Victor Wood Products" class="h-12 w-auto object-contain">
+            </a>
+            <div class="hidden md:flex space-x-5 items-center">
+                <a href="/" class="text-gray-600 hover:text-amber-700 transition duration-300">Home</a>
+                <div class="dropdown relative">
+                    <button class="text-gray-600 hover:text-amber-700 transition duration-300 flex items-center gap-1">
+                        Services
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="dropdown-menu absolute top-full left-0 bg-white shadow-lg rounded-md py-2 w-64 z-50 border border-gray-100">
+                        <a href="/pallets" class="block px-4 py-2 text-gray-700 hover:bg-amber-50 hover:text-amber-700 text-sm">Custom Wood Pallets</a>
+                        <a href="/ispm-15-heat-treated-pallets" class="block px-4 py-2 text-gray-700 hover:bg-amber-50 hover:text-amber-700 text-sm">ISPM-15 Heat Treated Pallets</a>
+                        <a href="/custom-crates" class="block px-4 py-2 text-gray-700 hover:bg-amber-50 hover:text-amber-700 text-sm">Custom Crates &amp; Boxes</a>
+                        <a href="/export-packaging" class="block px-4 py-2 text-gray-700 hover:bg-amber-50 hover:text-amber-700 text-sm">Export Packaging</a>
+                        <a href="/lumber-dunnage" class="block px-4 py-2 text-gray-700 hover:bg-amber-50 hover:text-amber-700 text-sm">Lumber &amp; Dunnage</a>
+                        <a href="/warehouse-pallet-supply" class="block px-4 py-2 text-gray-700 hover:bg-amber-50 hover:text-amber-700 text-sm">Warehouse Pallet Supply</a>
+                        <a href="/port-of-baltimore" class="block px-4 py-2 text-gray-700 hover:bg-amber-50 hover:text-amber-700 text-sm">Port of Baltimore</a>
+                    </div>
+                </div>
+                <a href="/about" class="text-gray-600 hover:text-amber-700 transition duration-300">About Us</a>
+                <a href="/government" class="text-gray-600 hover:text-amber-700 transition duration-300">Government</a>
+                <a href="/gallery" class="text-gray-600 hover:text-amber-700 transition duration-300">Gallery</a>
+                <a href="tel:4102884300" class="flex items-center text-gray-600 hover:text-amber-700 transition duration-300 font-semibold">
+                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                    (410) 288-4300
+                </a>
+                <a href="/#contact" class="bg-amber-600 text-white px-4 py-2 rounded-md hover:bg-amber-700 transition duration-300">Contact Us</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-800 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 border-t border-gray-100">
+            <a href="/" class="block py-2 text-gray-600 hover:text-amber-700">Home</a>
+            <div class="py-2">
+                <p class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">Services</p>
+                <a href="/pallets" class="block py-1 pl-3 text-gray-600 hover:text-amber-700 text-sm">Custom Wood Pallets</a>
+                <a href="/ispm-15-heat-treated-pallets" class="block py-1 pl-3 text-gray-600 hover:text-amber-700 text-sm">ISPM-15 Heat Treated Pallets</a>
+                <a href="/custom-crates" class="block py-1 pl-3 text-gray-600 hover:text-amber-700 text-sm">Custom Crates &amp; Boxes</a>
+                <a href="/export-packaging" class="block py-1 pl-3 text-gray-600 hover:text-amber-700 text-sm">Export Packaging</a>
+                <a href="/lumber-dunnage" class="block py-1 pl-3 text-gray-600 hover:text-amber-700 text-sm">Lumber &amp; Dunnage</a>
+                <a href="/warehouse-pallet-supply" class="block py-1 pl-3 text-gray-600 hover:text-amber-700 text-sm">Warehouse Pallet Supply</a>
+                <a href="/port-of-baltimore" class="block py-1 pl-3 text-gray-600 hover:text-amber-700 text-sm">Port of Baltimore</a>
+            </div>
+            <a href="/about" class="block py-2 text-gray-600 hover:text-amber-700">About Us</a>
+            <a href="/government" class="block py-2 text-gray-600 hover:text-amber-700">Government</a>
+            <a href="/gallery" class="block py-2 text-gray-600 hover:text-amber-700">Gallery</a>
+            <a href="/#contact" class="block mt-2 bg-amber-600 text-white px-4 py-2 rounded-md text-center hover:bg-amber-700">Contact Us</a>
+        </div>
+    </header>
+
+        <main>
+        <!-- Hero -->
+        <section class="relative h-72 md:h-96 flex items-center overflow-hidden">
+            <img src="carousel-img-pallet.webp" width="1200" height="1600" alt="ISPM-15 stamped wood pallets ready for export at Victor Wood Products Baltimore" class="absolute inset-0 w-full h-full object-cover">
+            <div class="hero-overlay absolute inset-0"></div>
+            <div class="container mx-auto px-6 relative z-10">
+                <p class="text-amber-400 text-sm font-semibold uppercase tracking-widest mb-2">Shipper's Guide</p>
+                <h1 class="text-4xl md:text-5xl font-extrabold text-white leading-tight">ISPM-15 Explained: What Shippers Need to Know About Wood Packaging</h1>
+                <p class="mt-4 text-lg text-gray-200 max-w-2xl">How to read the IPPC stamp, which treatments are accepted, what's exempt, and what happens when a pallet or crate fails inspection.</p>
+            </div>
+        </section>
+
+        <!-- Quick answer + TOC -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-6 max-w-3xl">
+                <div class="answer-box bg-amber-50 rounded-lg p-6 mb-10">
+                    <p class="text-sm font-bold text-amber-700 uppercase tracking-wider mb-2">The short answer</p>
+                    <p class="text-gray-800 text-lg leading-relaxed">
+                        <strong>ISPM-15</strong> is the international rule that requires solid-wood packaging — pallets, crates, skids, and dunnage — to be <strong>heat treated or fumigated</strong> and <strong>stamped with the IPPC mark</strong> before it crosses a border. It exists to stop wood-boring insects and plant diseases from hitching a ride in shipping material. If your freight is leaving the U.S. on wood packaging, assume ISPM-15 applies.
+                    </p>
+                </div>
+
+                <nav class="toc bg-gray-50 rounded-lg border border-gray-200 p-6" aria-label="On this page">
+                    <p class="font-bold text-gray-900 mb-3">On this page</p>
+                    <ul class="space-y-2 text-amber-700 font-semibold">
+                        <li><a href="#what-is-ispm-15">What ISPM-15 is and what it covers</a></li>
+                        <li><a href="#ippc-vs-ispm-15">IPPC vs. ISPM-15</a></li>
+                        <li><a href="#read-the-stamp">How to read an ISPM-15 stamp</a></li>
+                        <li><a href="#treatment-codes">Treatment codes: HT, DH, and MB</a></li>
+                        <li><a href="#exempt">What's exempt</a></li>
+                        <li><a href="#which-countries">Which countries require it</a></li>
+                        <li><a href="#non-compliant">What happens if packaging isn't compliant</a></li>
+                        <li><a href="#certification">How ISPM-15 certification works in the U.S.</a></li>
+                        <li><a href="#faq">Frequently asked questions</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
+
+        <!-- What it is -->
+        <section id="what-is-ispm-15" class="py-16 bg-gray-50">
+            <div class="container mx-auto px-6 max-w-3xl">
+                <h2 class="text-3xl font-extrabold text-gray-900 mb-2">What ISPM-15 Is and What It Covers</h2>
+                <div class="w-16 h-1 bg-amber-500 rounded mb-6"></div>
+                <p class="text-gray-700 text-lg leading-relaxed mb-5">
+                    ISPM-15 stands for <strong>International Standards for Phytosanitary Measures No. 15</strong>, titled <em>Regulation of Wood Packaging Material in International Trade</em>. It was first adopted in 2002 and is maintained by the International Plant Protection Convention (IPPC), a treaty administered through the UN Food and Agriculture Organization.
+                </p>
+                <p class="text-gray-700 text-lg leading-relaxed mb-5">
+                    Raw wood can carry pests such as the Asian longhorned beetle, emerald ash borer, and pine wood nematode. Wood packaging moves between continents constantly, so it became one of the main pathways for invasive species. ISPM-15 closes that pathway by requiring the wood to be treated to kill anything living in it, then marked so inspectors can verify the treatment at a glance.
+                </p>
+                <p class="text-gray-700 text-lg leading-relaxed mb-4">The standard applies to <strong>wood packaging material more than 6 mm thick</strong>, including:</p>
+                <ul class="space-y-3 mb-5">
+                    <li class="flex items-start"><svg class="w-5 h-5 text-amber-600 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span class="text-gray-700"><strong>Pallets and skids</strong>, both stringer and block construction</span></li>
+                    <li class="flex items-start"><svg class="w-5 h-5 text-amber-600 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span class="text-gray-700"><strong>Crates, boxes, and cases</strong> built from solid wood</span></li>
+                    <li class="flex items-start"><svg class="w-5 h-5 text-amber-600 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span class="text-gray-700"><strong>Dunnage, blocking, and bracing</strong> used to secure cargo in containers, holds, and flatracks</span></li>
+                    <li class="flex items-start"><svg class="w-5 h-5 text-amber-600 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span class="text-gray-700"><strong>Cable reels, load boards, and collars</strong> made of raw wood</span></li>
+                </ul>
+                <p class="text-gray-700 text-lg leading-relaxed">
+                    The wood must also be <strong>debarked</strong>. Small, isolated pieces of bark are tolerated within tight size limits, but bark-covered lumber is not compliant even if it has been heat treated.
+                </p>
+            </div>
+        </section>
+
+        <!-- IPPC vs ISPM -->
+        <section id="ippc-vs-ispm-15" class="py-16 bg-white">
+            <div class="container mx-auto px-6 max-w-3xl">
+                <h2 class="text-3xl font-extrabold text-gray-900 mb-2">IPPC vs. ISPM-15: What's the Difference?</h2>
+                <div class="w-16 h-1 bg-amber-500 rounded mb-6"></div>
+                <p class="text-gray-700 text-lg leading-relaxed mb-5">
+                    The two terms get used interchangeably, but they're different things. The <strong>IPPC</strong> is the organization, an international plant-health treaty with more than 180 member countries. <strong>ISPM-15</strong> is one of the standards it publishes, the one that covers wood packaging.
+                </p>
+                <p class="text-gray-700 text-lg leading-relaxed">
+                    The stamp on compliant packaging is usually called the <strong>"IPPC mark"</strong> or <strong>"IPPC stamp"</strong> because it carries the IPPC symbol. What it certifies is compliance with ISPM-15. When a customer asks for "IPPC pallets," "ISPM-15 pallets," or "heat treated export pallets," they're asking for the same thing.
+                </p>
+            </div>
+        </section>
+
+        <!-- Read the stamp -->
+        <section id="read-the-stamp" class="py-16 bg-gray-50">
+            <div class="container mx-auto px-6 max-w-3xl">
+                <h2 class="text-3xl font-extrabold text-gray-900 mb-2">How to Read an ISPM-15 Stamp</h2>
+                <div class="w-16 h-1 bg-amber-500 rounded mb-6"></div>
+                <p class="text-gray-700 text-lg leading-relaxed mb-8">
+                    A compliant mark is burned or stamped onto at least two opposite sides of the pallet or crate so it can be seen without unloading. The layout varies slightly by country and inspection agency, but every mark has the same core parts:
+                </p>
+
+                <div class="text-center mb-8">
+                    <div class="stamp" role="img" aria-label="Example ISPM-15 stamp: IPPC symbol, then US-0000, then HT">
+                        <div class="stamp-symbol">IPPC<br>symbol</div>
+                        <div class="stamp-codes">
+                            <span><span class="stamp-tag">2</span>US-0000</span>
+                            <span><span class="stamp-tag">4</span>HT</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-500 mt-3">Simplified illustration. Real marks also show the inspection agency's logo.</p>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="bg-white rounded-lg border border-gray-200 p-5">
+                        <p class="font-bold text-gray-900 mb-1">1. The IPPC symbol</p>
+                        <p class="text-gray-700">A stylized wheat-sheaf logo, usually on the left. It's the international signal that the item is treated wood packaging. It can only be applied by a producer authorized to use it.</p>
+                    </div>
+                    <div class="bg-white rounded-lg border border-gray-200 p-5">
+                        <p class="font-bold text-gray-900 mb-1">2. Country code + producer number</p>
+                        <p class="text-gray-700">The two-letter ISO country code (<strong>US</strong> for the United States) followed by the unique number assigned to the facility that treated or produced the packaging. That number is how an inspector traces a pallet back to the company responsible for it.</p>
+                    </div>
+                    <div class="bg-white rounded-lg border border-gray-200 p-5">
+                        <p class="font-bold text-gray-900 mb-1">3. Agency logo (U.S. marks)</p>
+                        <p class="text-gray-700">U.S. marks also carry the logo of the accredited inspection agency that audits the producer. More on how that system works <a href="#certification" class="text-amber-700 font-semibold">below</a>.</p>
+                    </div>
+                    <div class="bg-white rounded-lg border border-gray-200 p-5">
+                        <p class="font-bold text-gray-900 mb-1">4. Treatment code</p>
+                        <p class="text-gray-700">Two letters showing how the wood was treated: <strong>HT</strong>, <strong>DH</strong>, or <strong>MB</strong>. You may still see <strong>DB</strong> (debarked) on older marks. Debarking is now required for all compliant wood, so it no longer needs its own code.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Treatment codes -->
+        <section id="treatment-codes" class="py-16 bg-white">
+            <div class="container mx-auto px-6 max-w-3xl">
+                <h2 class="text-3xl font-extrabold text-gray-900 mb-2">Treatment Codes: HT, DH, and MB</h2>
+                <div class="w-16 h-1 bg-amber-500 rounded mb-6"></div>
+                <p class="text-gray-700 text-lg leading-relaxed mb-6">ISPM-15 recognizes three treatment methods. For U.S. exporters, heat treatment is the practical default.</p>
+                <div class="table-wrap mb-6">
+                    <table class="guide-table">
+                        <thead>
+                            <tr><th>Code</th><th>Method</th><th>Requirement</th><th>What to know</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>HT</strong></td><td>Heat treatment</td><td>Wood core reaches at least 56&nbsp;°C (132.8&nbsp;°F) for 30 continuous minutes</td><td>By far the most common. Accepted everywhere, and no chemical residue.</td></tr>
+                            <tr><td><strong>DH</strong></td><td>Dielectric heating</td><td>Wood reaches at least 60&nbsp;°C (140&nbsp;°F) throughout its profile for 1 continuous minute</td><td>Microwave or radio-frequency heating. Less common.</td></tr>
+                            <tr><td><strong>MB</strong></td><td>Methyl bromide fumigation</td><td>Fumigation to a set concentration and duration</td><td>Being phased out because methyl bromide depletes ozone. Some countries no longer accept it, so avoid MB-marked packaging for export.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="text-gray-700 leading-relaxed">
+                    A common misconception: <strong>"kiln-dried" (KD) is not the same as heat treated</strong>. Kiln drying lowers moisture content and may or may not meet the ISPM-15 time-and-temperature schedule. Only wood carrying the HT mark from an authorized producer counts as compliant.
+                </p>
+            </div>
+        </section>
+
+        <!-- Exempt -->
+        <section id="exempt" class="py-16 bg-gray-50">
+            <div class="container mx-auto px-6 max-w-3xl">
+                <h2 class="text-3xl font-extrabold text-gray-900 mb-2">What's Exempt from ISPM-15</h2>
+                <div class="w-16 h-1 bg-amber-500 rounded mb-6"></div>
+                <p class="text-gray-700 text-lg leading-relaxed mb-5">These materials don't need to be treated or stamped:</p>
+                <ul class="space-y-3 mb-6">
+                    <li class="flex items-start"><svg class="w-5 h-5 text-amber-600 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span class="text-gray-700"><strong>Thin wood</strong>, 6 mm or less</span></li>
+                    <li class="flex items-start"><svg class="w-5 h-5 text-amber-600 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span class="text-gray-700"><strong>Processed wood</strong> made with glue, heat, and pressure, such as plywood, OSB, particleboard, and veneer</span></li>
+                    <li class="flex items-start"><svg class="w-5 h-5 text-amber-600 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span class="text-gray-700"><strong>Sawdust, shavings, and wood wool</strong></span></li>
+                    <li class="flex items-start"><svg class="w-5 h-5 text-amber-600 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span class="text-gray-700"><strong>Wine and spirit barrels</strong> heated during manufacture</span></li>
+                    <li class="flex items-start"><svg class="w-5 h-5 text-amber-600 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span class="text-gray-700"><strong>Wood permanently built into</strong> vehicles and shipping containers</span></li>
+                    <li class="flex items-start"><svg class="w-5 h-5 text-amber-600 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span class="text-gray-700"><strong>Non-wood pallets</strong>, whether plastic, metal, or corrugated</span></li>
+                </ul>
+                <div class="bg-white rounded-lg border border-amber-200 p-5">
+                    <p class="text-gray-700"><strong>Watch out for hybrid packaging.</strong> A plywood crate is exempt, but if it sits on solid-wood skids or has solid-wood cleats, <em>those parts</em> still need to be treated and marked. This is one of the most common reasons export crates get flagged.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Countries -->
+        <section id="which-countries" class="py-16 bg-white">
+            <div class="container mx-auto px-6 max-w-3xl">
+                <h2 class="text-3xl font-extrabold text-gray-900 mb-2">Which Countries Require ISPM-15?</h2>
+                <div class="w-16 h-1 bg-amber-500 rounded mb-6"></div>
+                <p class="text-gray-700 text-lg leading-relaxed mb-5">
+                    Nearly every major trading partner enforces ISPM-15 on imported wood packaging, including the European Union and United Kingdom, China, Mexico, Australia, New Zealand, Japan, South Korea, India, and Brazil. The United States enforces it on imports too. U.S. Customs and Border Protection turns back non-compliant wood packaging at the border.
+                </p>
+                <p class="text-gray-700 text-lg leading-relaxed mb-5">
+                    A few trade lanes have special arrangements, and individual countries sometimes add their own requirements on top of the standard. Those rules change, so check the destination's current requirements with your freight forwarder before you ship.
+                </p>
+                <p class="text-gray-700 text-lg leading-relaxed">
+                    <strong>The practical rule for exporters:</strong> if wood packaging is leaving the country, use ISPM-15 stock. Compliant pallets and crates cost little more than untreated ones, and they remove a whole category of risk at the destination port.
+                </p>
+            </div>
+        </section>
+
+        <!-- Non-compliant -->
+        <section id="non-compliant" class="py-16 bg-gray-50">
+            <div class="container mx-auto px-6 max-w-3xl">
+                <h2 class="text-3xl font-extrabold text-gray-900 mb-2">What Happens If Wood Packaging Isn't Compliant</h2>
+                <div class="w-16 h-1 bg-amber-500 rounded mb-6"></div>
+                <p class="text-gray-700 text-lg leading-relaxed mb-5">If inspectors at the destination find wood packaging with no mark, an illegible mark, bark, or live pests, the shipment can be:</p>
+                <div class="grid md:grid-cols-3 gap-4 mb-6">
+                    <div class="bg-white rounded-lg border border-gray-200 p-5">
+                        <p class="font-bold text-gray-900 mb-1">Held</p>
+                        <p class="text-sm text-gray-600">Detained at the port while the problem is resolved, with demurrage and storage charges adding up.</p>
+                    </div>
+                    <div class="bg-white rounded-lg border border-gray-200 p-5">
+                        <p class="font-bold text-gray-900 mb-1">Treated or destroyed</p>
+                        <p class="text-sm text-gray-600">The packaging is fumigated, or removed and destroyed, and the cargo re-packed, all at the shipper's expense.</p>
+                    </div>
+                    <div class="bg-white rounded-lg border border-gray-200 p-5">
+                        <p class="font-bold text-gray-900 mb-1">Re-exported</p>
+                        <p class="text-sm text-gray-600">The entire shipment is sent back to origin, and the importer never receives it.</p>
+                    </div>
+                </div>
+                <p class="text-gray-700 text-lg leading-relaxed">
+                    The costs are usually charged to the shipper or importer and can easily exceed the value of the packaging many times over. That's why freight forwarders often refuse to load export freight on unmarked wood.
+                </p>
+            </div>
+        </section>
+
+        <!-- Certification -->
+        <section id="certification" class="py-16 bg-white">
+            <div class="container mx-auto px-6 max-w-3xl">
+                <h2 class="text-3xl font-extrabold text-gray-900 mb-2">How ISPM-15 Certification Works in the U.S.</h2>
+                <div class="w-16 h-1 bg-amber-500 rounded mb-6"></div>
+                <p class="text-gray-700 text-lg leading-relaxed mb-5">
+                    In the United States, the USDA's Animal and Plant Health Inspection Service (APHIS) oversees ISPM-15. Day to day, the program is run through the <strong>American Lumber Standard Committee (ALSC)</strong>. The ALSC accredits independent inspection agencies, and those agencies license and audit the facilities allowed to apply the IPPC mark.
+                </p>
+                <p class="text-gray-700 text-lg leading-relaxed mb-5">There are two ways a U.S. company can produce compliant packaging:</p>
+                <div class="space-y-4 mb-6">
+                    <div class="bg-gray-50 rounded-lg border border-gray-200 p-5">
+                        <p class="font-bold text-gray-900 mb-1">Treat the wood on-site</p>
+                        <p class="text-gray-700">The facility runs its own heat-treatment chamber, treats lumber or finished pallets to the ISPM-15 schedule, and marks them.</p>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg border border-gray-200 p-5">
+                        <p class="font-bold text-gray-900 mb-1">Build with certified heat-treated lumber</p>
+                        <p class="text-gray-700">The manufacturer buys lumber that has already been heat treated at a certified facility, builds the pallets or crates from it, and applies the IPPC mark under its own registered number. The inspection agency audits its lumber sourcing and records to confirm only treated wood goes into marked product.</p>
+                    </div>
+                </div>
+                <p class="text-gray-700 text-lg leading-relaxed">
+                    <strong>Victor Wood Products uses the second approach.</strong> We build pallets, skids, crates, and dunnage in Baltimore from certified heat-treated lumber and stamp each unit with the IPPC mark. You get compliant packaging built to your specs, made minutes from the Port of Baltimore.
+                </p>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="py-16 bg-gray-50 border-t border-gray-200">
+            <div class="container mx-auto px-6 max-w-3xl">
+                <h2 class="text-2xl font-extrabold text-gray-900 mb-2 text-center">ISPM-15 — Frequently Asked Questions</h2>
+                <div class="w-16 h-1 bg-amber-500 rounded mx-auto mb-10"></div>
+                <div class="space-y-6">
+                    <div class="bg-white rounded-lg border border-gray-200 p-6">
+                        <h3 class="font-bold text-gray-900 text-lg mb-2">What does ISPM stand for?</h3>
+                        <p class="text-gray-700">ISPM stands for International Standards for Phytosanitary Measures. ISPM No. 15 is the standard that covers wood packaging material — pallets, crates, skids, and dunnage — used in international trade.</p>
+                    </div>
+                    <div class="bg-white rounded-lg border border-gray-200 p-6">
+                        <h3 class="font-bold text-gray-900 text-lg mb-2">Is ISPM-15 required for domestic shipments?</h3>
+                        <p class="text-gray-700">No. ISPM-15 applies to wood packaging that crosses an international border. Pallets and crates that stay within the United States don't need to be treated or stamped, although some shippers use ISPM-15 stock anyway so the same packaging can be used for export.</p>
+                    </div>
+                    <div class="bg-white rounded-lg border border-gray-200 p-6">
+                        <h3 class="font-bold text-gray-900 text-lg mb-2">Do plastic pallets, plywood, or OSB crates need ISPM-15?</h3>
+                        <p class="text-gray-700">No. ISPM-15 covers raw solid wood. Plastic and metal pallets are outside its scope, and processed wood products such as plywood, OSB, and particleboard made with glue, heat, and pressure are exempt. Solid-wood parts attached to them — runners, cleats, or skids — still need to be treated and marked.</p>
+                    </div>
+                    <div class="bg-white rounded-lg border border-gray-200 p-6">
+                        <h3 class="font-bold text-gray-900 text-lg mb-2">Does an ISPM-15 stamp expire?</h3>
+                        <p class="text-gray-700">The standard sets no expiration date — heat treatment is a one-time treatment and the mark stays valid as long as the packaging isn't altered. Repaired pallets can only use wood that has already been treated, and remanufactured units must be re-treated and re-marked.</p>
+                    </div>
+                    <div class="bg-white rounded-lg border border-gray-200 p-6">
+                        <h3 class="font-bold text-gray-900 text-lg mb-2">What's the difference between IPPC and ISPM-15?</h3>
+                        <p class="text-gray-700">The IPPC (International Plant Protection Convention) is the international treaty organization. ISPM-15 is one of the standards it publishes. The stamp on compliant wood packaging is usually called the IPPC mark because it carries the IPPC symbol, but it certifies compliance with ISPM-15.</p>
+                    </div>
+                    <div class="bg-white rounded-lg border border-gray-200 p-6">
+                        <h3 class="font-bold text-gray-900 text-lg mb-2">Can a pallet manufacturer be ISPM-15 compliant without a heat-treating kiln?</h3>
+                        <p class="text-gray-700">Yes. In the U.S., a manufacturer can build pallets and crates from lumber that has already been heat treated at a certified facility and apply the IPPC mark under its own registered number, audited by an accredited inspection agency. That is a common and fully compliant way to produce ISPM-15 packaging.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related -->
+        <section class="py-12 bg-white border-t border-gray-200">
+            <div class="container mx-auto px-6">
+                <h2 class="text-xl font-bold text-gray-900 mb-6">ISPM-15 Packaging from Victor Wood Products</h2>
+                <div class="grid sm:grid-cols-3 gap-4">
+                    <a href="/ispm-15-heat-treated-pallets" class="block p-5 bg-gray-50 rounded-lg border border-gray-200 hover:border-amber-400 hover:shadow-md transition duration-300">
+                        <p class="font-semibold text-gray-900">ISPM-15 Heat Treated Pallets</p>
+                        <p class="text-sm text-gray-500 mt-1">48x40 and custom sizes, IPPC stamped</p>
+                    </a>
+                    <a href="/custom-crates" class="block p-5 bg-gray-50 rounded-lg border border-gray-200 hover:border-amber-400 hover:shadow-md transition duration-300">
+                        <p class="font-semibold text-gray-900">Custom Export Crates</p>
+                        <p class="text-sm text-gray-500 mt-1">Machinery and equipment crating for export</p>
+                    </a>
+                    <a href="/lumber-dunnage" class="block p-5 bg-gray-50 rounded-lg border border-gray-200 hover:border-amber-400 hover:shadow-md transition duration-300">
+                        <p class="font-semibold text-gray-900">Dunnage &amp; Blocking Lumber</p>
+                        <p class="text-sm text-gray-500 mt-1">Heat treated dunnage for container loads</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="py-16 bg-amber-700">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl font-extrabold text-white mb-4">Shipping Out of Baltimore? Get Compliant Packaging Fast.</h2>
+                <p class="text-amber-100 text-lg mb-8 max-w-xl mx-auto">ISPM-15 pallets, crates, and dunnage built to your specs, minutes from the Port of Baltimore. Send us your sizes and ship date for a same-day quote.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="tel:4102884300" class="bg-white text-amber-700 font-bold px-8 py-3 rounded-lg hover:bg-amber-50 transition duration-300 text-lg">Call (410) 288-4300</a>
+                    <a href="/#contact" class="bg-amber-900 text-white font-bold px-8 py-3 rounded-lg hover:bg-amber-800 transition duration-300 text-lg">Request a Quote</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <footer class="bg-gray-800 text-white">
+        <div class="container mx-auto px-6 py-8">
+            <div class="md:flex justify-between items-center text-center md:text-left">
+                <div>
+                    <img loading="lazy" src="VWP_logo_Trees.webp" width="600" height="348" alt="Victor Wood Products Tree Logo" class="h-10 w-auto object-contain mx-auto mb-4 md:mx-0">
+                    <h3 class="text-xl font-bold">Victor Wood Products</h3>
+                    <p>7700 Rolling Mill Rd, Baltimore, MD 21224</p>
+                    <p>(410) 288-4300</p>
+                    <p class="mt-2 text-sm text-gray-400">CAGE: 76UX7 | UEI: K6YNFUMDWHJ8</p>
+                </div>
+                <div class="mt-4 md:mt-0 text-center">
+                    <div class="flex flex-wrap justify-center md:justify-end gap-x-6 gap-y-2 text-sm text-gray-400 mb-3">
+                        <a href="/pallets" class="hover:text-amber-400">Pallets</a>
+                        <a href="/custom-crates" class="hover:text-amber-400">Custom Crates</a>
+                        <a href="/ispm-15-heat-treated-pallets" class="hover:text-amber-400">ISPM-15</a>
+                        <a href="/ispm-15-guide" class="hover:text-amber-400">ISPM-15 Guide</a>
+                        <a href="/export-packaging" class="hover:text-amber-400">Export Packaging</a>
+                        <a href="/lumber-dunnage" class="hover:text-amber-400">Lumber &amp; Dunnage</a>
+                        <a href="/port-of-baltimore" class="hover:text-amber-400">Port of Baltimore</a>
+                        <a href="/government" class="hover:text-amber-400">Government</a>
+                        <a href="/gallery" class="hover:text-amber-400">Gallery</a>
+                    </div>
+                    <p class="text-gray-400 text-sm">© 2026 Victor Wood Products. All Rights Reserved. &middot; <a href="/privacy-policy" class="hover:text-amber-400">Privacy Policy</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+    </script>
+</body>
+</html>

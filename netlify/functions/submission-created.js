@@ -34,6 +34,21 @@ exports.handler = async (event) => {
       return { statusCode: 200, body: `Ignored form: ${formName}` };
     }
 
+    // Netlify's filter alone has let bot spam through as "verified". Bots that
+    // POST directly don't pick a real option from the product dropdown, so
+    // only count submissions that did — keeps junk out of GA4 conversions.
+    const VALID_PRODUCTS = [
+      'New Wood Pallets',
+      'Custom Crates & Boxes',
+      'Lumber & Wood Sales',
+      'Government Contract',
+      'Other',
+    ];
+    if (!VALID_PRODUCTS.includes(data.product) || data['bot-field']) {
+      console.log(`Skipped likely spam (product=${data.product || '(none)'})`);
+      return { statusCode: 200, body: 'Skipped: likely spam' };
+    }
+
     // GA client id is captured client-side into a hidden field (see index.html).
     // If it's missing for any reason, fall back to a synthetic id so the lead
     // still records — it just won't be tied back to the original session/source.

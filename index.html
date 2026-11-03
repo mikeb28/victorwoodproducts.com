@@ -95,6 +95,10 @@
         color: #000000 !important;
     }
 
+    #recaptcha-error {
+        color: #DC2626;
+    }
+
     .dropdown-menu { display: none; }
     .dropdown:hover .dropdown-menu { display: block; }
 </style>
@@ -435,6 +439,7 @@
                         </div>
                         <!-- Netlify-managed reCAPTCHA v2; submissions without a valid token are rejected server-side -->
                         <div class="mb-4" data-netlify-recaptcha="true"></div>
+                        <p id="recaptcha-error" class="hidden mb-4 text-sm font-bold" role="alert">Please check the 'I'm not a robot' box</p>
                         <button type="submit" class="w-full bg-amber-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-amber-700 transition duration-300">Request a Quote</button>
                     </form>
                 </div>
@@ -510,6 +515,27 @@
             } catch (e) {
                 // Non-fatal: the lead still records without source attribution.
             }
+        })();
+    </script>
+    <!-- Catch an unticked reCAPTCHA before posting, so visitors see an inline prompt
+         instead of Netlify's error page. Convenience only: Netlify still verifies the token. -->
+    <script>
+        (function () {
+            var form = document.getElementById('contact-form');
+            var error = document.getElementById('recaptcha-error');
+            if (!form || !error) return;
+            form.addEventListener('submit', function (e) {
+                // Netlify injects the widget at deploy, so look it up at submit time.
+                // No widget (local preview, script blocked): let Netlify decide.
+                var token = form.querySelector('[name="g-recaptcha-response"]');
+                if (!token) return;
+                if (!token.value) {
+                    e.preventDefault();
+                    error.classList.remove('hidden');
+                    return;
+                }
+                error.classList.add('hidden');
+            });
         })();
     </script>
 </body>

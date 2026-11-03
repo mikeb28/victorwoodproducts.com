@@ -59,3 +59,21 @@ keywords produced them.
 - Netlify Functions run on Node 18+ (global `fetch` available) — no dependencies.
 - The function returns HTTP 200 even on error (logs the problem) so a bad payload
   never triggers a retry storm.
+
+## Lead emails (added Nov 2026)
+
+`submission-created.js` also emails each lead, but only when a real option was picked
+from the product dropdown. Bots that post straight to Netlify skip the page, so they
+leave it blank and never reach the inbox. Netlify still stores them under Forms.
+
+1. Sign up at resend.com with the inbox that should receive leads, then API Keys →
+   **Create API key** (sending access).
+2. Netlify → Site settings → Environment variables → add `RESEND_API_KEY` (the key) and
+   `LEAD_EMAIL_TO` (that same inbox), then redeploy.
+3. Send one real test quote and confirm the email arrives (subject starts with
+   "New quote request").
+4. Only then: Netlify → Forms → Form notifications → delete the default email
+   notification, so Netlify stops emailing unfiltered entries.
+
+To send from an @victorwoodproducts.com address or to other inboxes, verify the domain
+in Resend (it gives DNS records to add) and set `LEAD_EMAIL_FROM`.
